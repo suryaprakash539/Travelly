@@ -277,6 +277,11 @@ footer {
 .footer-wrapper h5 {
   flex: 1 1 40rem;
 }
+
+button:focus {
+  background: #26374d;
+  outline-color: white;
+}
 /* Media Query */
 @media screen and (max-width: 929px) {
   nav {
