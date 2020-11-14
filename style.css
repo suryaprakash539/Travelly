@@ -42,6 +42,11 @@ button {
   border: none;
   cursor: pointer;
   color: white;
+  transition: background 1s ease-in-out;
+}
+
+button:hover {
+  background: #324864;
 }
 
 /* NAV Styles */
@@ -95,6 +100,59 @@ nav ul {
   padding: 2rem;
 }
 
+/* Location styles */
+
+#locations {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url("./img/new-york-page.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.locations-head {
+  width: 95%;
+  margin: auto;
+}
+
+.locations-head h2 {
+  text-decoration: underline;
+}
+.locations-head h3 {
+  padding: 2rem 0;
+}
+
+.cloud {
+  position: absolute;
+  top: 0%;
+  right: -30%;
+  pointer-events: none;
+}
+
+.moving-cloud1 {
+  animation: cloudAnimation 6s infinite alternate ease-in-out;
+}
+
+.moving-cloud2 {
+  animation: cloudAnimation 4s infinite alternate ease-in-out;
+  top: 20%;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+@keyframes cloudAnimation {
+  from {
+    transform: translate(10%, -10%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+/* Media Query */
 @media screen and (max-width: 929px) {
   nav {
     text-align: center;
@@ -104,5 +162,16 @@ nav ul {
   }
   html {
     font-size: 45%;
+  }
+  .moving-cloud1 {
+    z-index: -2;
+  }
+  .moving-cloud2 {
+    z-index: -3;
+  }
+
+  .locations-head h3 {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
   }
 }
